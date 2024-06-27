@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+    --grey-blue-100: hsl(240, 80%, 98%);
+    --grey-blue-200: hsl(234, 14%, 74%);
+    --grey-blue-400: hsl(233, 13%, 49%);
+    --grey-blue-800: hsl(232, 13%, 33%);
+
+    --linear-gradient: #a3a8f0, #696fdd;
+
+    --primary-blue-clr: #696fdd;
+
+    --accent-white-clr: hsl(0, 0%, 100%);
+    --accent-black-clr: hsl(0, 0%, 0%);
+
+    --ff-primary: "Ubuntu", sans-serif;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-body: 1.5rem;
+    --fs-html: 62.5%;
+
+    --line-height: 1.5;
+    --main-container-max-width: 80rem;
+}
+
+html {
+    font-size: var(--fs-html);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-regular);
+    font-family: var(--ff-primary);
+    line-height: var(--line-height);
+    background-color: var(--grey-blue-100);
+}
+
+/* switch bar design  */
+.switch-bar-container{
+    width: 5rem;
+    height: 3rem;
+    border-radius: 100vw;
+    padding-inline: 0.4rem;
+    background: linear-gradient(var(--linear-gradient));
+
+    display: flex;
+    align-items: center;
+}
+
+.inner-switch-circle{
+    width: 2.3rem;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    transition: position 4s ease-in-out;
+}
+
+.switch-bar-container.active{
+    position: relative;
+}
+
+.switch-bar-container.active .inner-switch-circle {
+    right: 0.5rem;
+}
+
+
+/* main container styling  */
+.main-container{
+    max-width: var(--main-container-max-width);
+    margin-inline: auto;
+}
+
+.pricing-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+:is(.pricing-header ) h2, p{
+    color: var(--grey-blue-800);
+    font-weight: var(--fw-bold);
+}
+
+.pricing-header h2{
+    font-size: 2.8rem;
+    margin-block: 1rem;
+}
+
+.pricing-header p{
+    font-size: 1.6rem;
+}
+
+.toogle-switch-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pricing-card-container{
+    --size: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size);
+
+    background-color: var(--accent-white-clr);
+    margin-top: calc(var(--size) * 4);
+}
+
+.pricing-cards{
+   text-align: center;
+   padding: 1rem;
+   border-radius: 0.6rem;
+   box-shadow: 0 0.5rem 1.4rem var(--grey-blue-200);
+}
+
+.pricing-cards h1{
+    font-size: 5rem;
+    margin: 0;
+    font-weight: var(--fw-bold);
+}
+
+.pricing-cards h3{
+    margin: 1rem 0 0 0;
+}
+
+hr{
+    max-width: 80%;
+}
+
+#pricing-card-1{
+    padding: 0 0 1rem 1rem;
+}
+
+#pricing-card-2{
+    background: linear-gradient(var(--linear-gradient));
+    transform: scale(1.15);
+}
+
+#pricing-card-2 :is(h1, h3, p){
+    color: var(--grey-blue-100);
+}
+
+.btn{
+    width: 100%;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    font-weight: var(--fw-bold);
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+:is( #pricing-card-1, #pricing-card-3 ) button{
+    background: linear-gradient(var(--linear-gradient));
+    color: var(--grey-blue-100);
+    max-width: 90%;
+}
+
+#pricing-card-1 button{
+    max-width: 80%;
+}
+
+#pricing-card-2 button{
+    color: var(--primary-blue-clr);
+}
+
+:is(#pricing-card-1, #pricing-card-3) h1, h3{
+    color: var(--grey-blue-800);
+}
+
+#pricing-card-2{
+    box-shadow: 0 0 0;
+}
+
+img{
+    position: absolute;
+}
+
+#bg-top{
+    right: 0;
+    width: 22%;
+    z-index: -1;
+}
+
+#bg-bottom{
+    left: 0;
+    bottom: 0;
+    width: 23%;
+    z-index: -1;
+}
